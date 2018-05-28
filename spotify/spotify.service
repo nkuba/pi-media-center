@@ -1,0 +1,16 @@
+[Unit]
+Description=Spotify Connect
+After=network-online.target
+
+[Service]
+Type=idle
+User=osmc
+ExecStartPre=/bin/sleep 25
+ExecStart=/opt/spotify/spotify
+Restart=always
+RestartSec=10
+StartLimitInterval=30
+StartLimitBurst=20
+
+[Install]
+WantedBy=multi-user.target
